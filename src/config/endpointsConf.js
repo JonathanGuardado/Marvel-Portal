@@ -20,5 +20,8 @@ module.exports = {
     timestamp: true
   },
   charactersApi: `${baseApiUrl}/v1/public/characters`,
+  comicsApi: `${baseApiUrl}/v1/public/comics`,
+  storiesApi: `${baseApiUrl}/v1/public/stories`
+  
 
 };

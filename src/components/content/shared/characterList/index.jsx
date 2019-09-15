@@ -19,17 +19,19 @@ export default class CharacterList extends React.PureComponent {
     
     return (  <div>    
      {characters.results ? 
-       <List
-      className="List"
-      height={600}
-      itemCount={characters.count}
-      itemSize={110}
-      itemData={characters.results}
-      width={"100%"}
-      //ref={ref}
-    >
-    {Row}
-    </List>         : "Loading..." }
+     <div> {characters.results.length >0 ? <List
+        className="List"
+        height={600}
+        itemCount={characters.count}
+        itemSize={110}
+        itemData={characters.results}
+        width={"100%"}
+        //ref={ref}
+      >
+      {Row}
+      </List>  :<center><div style={{height:'600px',paddingTop:'200px'}}><h1> Characters Not Found</h1></div></center>}
+      </div>
+      : "" }
        
     </div>
     );

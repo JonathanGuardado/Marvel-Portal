@@ -3,7 +3,7 @@ import { selectors, actions } from '../../../../ducks';
 import view from './index.jsx';
 
 const mapStateToProps = (state) => ({
-  filters: selectors.characters.getFilters(state),
+  filters: selectors.charactersFilters.getFilters(state),
   isCharacterListLoading: selectors.characters.isLoading(state)
 });
 

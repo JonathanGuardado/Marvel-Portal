@@ -12,7 +12,7 @@ import './index.scss';
  *   <CustomerList />
  * </Spinner>
  */
-class Spinner extends React.PureComponent {
+export default class Spinner extends React.PureComponent {
   render() {
     const { loading, children } = this.props;
     return (
