@@ -1,0 +1,35 @@
+.footer {
+    margin-top: 1rem;
+    width: 100%;
+    height: 62px;
+    // border-style: solid none;
+    // border: 1px solid #eaeaea;
+    display: block;
+  }
+  .footer-group {
+    height: 100px;        
+    line-height: 50px;    
+  }
+  .footer-logo {
+    margin-left: 1rem;
+    width: 100px;
+    height: 100px;
+    background: url('./marvel-logo.png') no-repeat; //changeee
+    background-size: 100% 100%;
+    display: inline-block;
+    line-height: 27px;
+    vertical-align:middle; 
+  }
+  .footer-copyright {
+    margin: 0 20px 0;
+    color: #666;    
+    font-size: 16px;
+    display: inline-block;
+    line-height: 27px;
+    vertical-align:middle;  
+  }
+  @media print {
+    #no-print {
+      display: none;
+    }
+  }

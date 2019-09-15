@@ -1,0 +1,19 @@
+.page-header {
+    border-style: solid none;
+    // border: 1px solid #eaeaea;
+    width: 100%;
+    // height: 6rem;
+    background-color: #393939;//changeeee
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    border-style: solid none;
+    // box-shadow: 4px 4px 4px rgb(245, 245, 245);
+    a {
+      text-decoration: none;
+      color: #393939;
+      cursor: pointer;
+      transition: color .2s;
+      -webkit-transition: color .2s;
+    }
+  }

@@ -1,0 +1,20 @@
+import _ from 'lodash';
+import createCachedSelector from 're-reselect';
+import hash from 'object-hash';
+
+export default (reducerName, selectors) => {
+  const selectorKeys = Object.keys(selectors);
+
+  const selectorsForReducer = {};
+  selectorKeys.forEach(selectorKey => {
+    selectorsForReducer[selectorKey] = createCachedSelector(
+      state => state[reducerName],
+      (state, ...args) => args,
+      (state, args) => selectors[selectorKey](state, ...args)
+    )(
+      (state, ...args) => hash(args)
+    );
+  });
+
+  return selectorsForReducer;
+};
