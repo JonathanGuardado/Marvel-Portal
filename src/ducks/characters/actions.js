@@ -13,7 +13,7 @@ export default {
       type: types.CHARACTERS_LIST,
       promise: fetchWrapper(charactersApi)
         .get({
-          name: name || undefined,
+          nameStartsWith: name || undefined,
           comics: comics || undefined,
           stories: stories || undefined
         })

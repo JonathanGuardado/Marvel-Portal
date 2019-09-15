@@ -6,12 +6,13 @@ import view from './index.jsx';
 
 
 const mapStateToProps = (state) => ({  
-  getComicList : (data) =>  actions.comics.getComicsList(data).promise.then(JSON.parse),  
-  comicsFilters: selectors.charactersFilters.getFilters(state).comicsIds
+  placeholder : "Search Characters by Name",
+  initValue:selectors.charactersFilters.getFilters(state).name  
+  
 });
 
 const mapDispatchToProps = (dispatch) => ({  
-  setComicsFilters:(o)  => dispatch(actions.charactersFilters.setComicsIds(o))
+  onSearch:(o)  => dispatch(actions.charactersFilters.setName(o))
 });
 
 

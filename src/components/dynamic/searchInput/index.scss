@@ -1,0 +1,28 @@
+.search {
+    // background-color: hsl(276, 66%, 16%);
+    width:20%
+}
+.searchInput {
+    width: 80% !important;
+    display: inline-block !important;
+    
+}
+.search-icon {
+    width: 5%;
+    height: 20px; 
+    display: inline-block;
+    //float: left;
+    line-height: 27px;
+    background: url('searchicon-black.png') no-repeat;//changee
+    vertical-align: middle;
+    cursor: pointer;    
+}
+
+.whitebgSearchInput {
+    color: black;
+    background-color: white;
+    border: light;
+}
+.whitebgSearchInput::placeholder {
+    color: grey;
+}

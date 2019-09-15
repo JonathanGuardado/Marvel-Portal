@@ -29,6 +29,14 @@ export default (state = INIT_STATE, action = {}) => {
         name:action.name
       };
     }
+    case types.CHARACTER_FILTERS_RESET: {      
+      return {
+        name: undefined,
+        comicsIds: [],
+        storiesIds: []
+      };
+    }
+    
     default: {
       return state;
     }
