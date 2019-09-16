@@ -10,7 +10,7 @@ export default class Row extends React.PureComponent {
       <div className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
         <div className="column-picture">
           <Link to={`/comics/${data[index].id}`}>
-            <img height="108" width="110" src={data[index].thumbnail.path + "." + data[index].thumbnail.extension} alt="" className="img-responsive" />
+            <img height="140" width="120" src={data[index].thumbnail.path + "." + data[index].thumbnail.extension} alt="" className="img-responsive" />
           </Link>
         </div>
         <div className="column-name">

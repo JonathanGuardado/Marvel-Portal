@@ -1,5 +1,5 @@
 import React from 'react';
-import { FixedSizeList as List } from "react-window";
+import { VariableSizeList  as List } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
 import Row from "../../shared/comicRow"
 import TittleSorteableColumn from "../../../dynamic/sorteableColumn/comics"
@@ -12,9 +12,22 @@ export default class ComicsList extends React.PureComponent {
         };
       }
     
+     
 
   render() {
-    const { comics } = this.props;     
+    const { comics} = this.props;   
+    
+    const getItemSize = index => {     
+      let l=150;
+      const col=comics.results[index].description;                 
+        if(col && col.length>350) {          
+          let div=col.length > 800 ? 200 : 120 
+          let f=(col.length/div)*35
+          l= f > l ? f : l       
+        }  
+      ;
+       return l
+    }  
     return (  <div>    
      {comics.results ? 
      <div> {comics.results.length >0 ? 
@@ -35,7 +48,7 @@ export default class ComicsList extends React.PureComponent {
         className="List"
         height={600}
         itemCount={comics.count}
-        itemSize={110}
+        itemSize={getItemSize}
         itemData={comics.results}
         width={"100%"}
         key={2}

@@ -1,30 +1,51 @@
 import React from 'react';
 import Header from './header';
-//import "./index.scss";
-//import ComicsList from '../shared/comicsList'
+import LeftMenu from './leftMenu';
+import Spinner from "../shared/spinner";
+import "./index.scss";
+import CharactersList from '../shared/characterList';
+import CharactersListFilters from '../characters/characterListFilters';
 
 export default class Comic extends React.PureComponent {
-    
+
     render() {
-        const {comic,filters} = this.props;        
-        
+        const { comic, filters, isLoadingCharacters, isLoadingStories } = this.props;
+        console.log(comic)
         return (
             <div>
                 <div className="banner">
                     <div className="container">
-                        <Header name={comic && comic.title ? comic.title : "Comic Tilte"  }/>
+                        <Header name={comic && comic.title ? comic.title : "Comic Title"} />
                     </div>
                 </div>
                 <div className="container">
-                <img height="500" width="500" src={comic ? comic.thumbnail.path + "." + comic.thumbnail.extension : ""} alt="" className="img-full" />
-                </div>
-                <div className="container pt-5">
-                <h3>{comic && comic.description ? comic.description : ""}</h3>
-                </div>
-                <div className="container">
-                    <div className="comics">
-                        {/*<ComicsList />*/}
-                    </div></div>
-            </div>)
+                    <div className="row">
+                        <div className="col-md-2">
+                            <LeftMenu id={comic ? comic.id : null} />
+                        </div>
+                        <div className="col-md-10">
+                            <img height="400" width="400" src={comic ? comic.thumbnail.path + "." + comic.thumbnail.extension : ""} alt="" className="img-full" />
+                            <div className="col-md-10 pt-5">
+                                <h3>{comic && comic.description ? comic.description : ""}</h3>
+                            </div>
+                            {comic && comic.id ?
+                                <div className="container">
+                                    <div className="comics">
+                                        <h3 className="pt-4 pb-4">Characters</h3>
+                                        <Spinner loading={isLoadingCharacters}>
+                                            <CharactersList/>
+                                            <CharactersListFilters comicId={comic.id} />
+                                        </Spinner>
+                                    </div>
+                                </div>                                
+                                :
+                                ""
+                            }
+                        </div>
+
+                    </div>
+                </div>             
+            </div>
+        )
     }
 }

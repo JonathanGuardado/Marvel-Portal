@@ -1,0 +1,25 @@
+.sidenav-left {
+    margin-left: 25px;
+    margin-top: 20px;
+    font-size: 1.1rem;    
+    width: 35%;
+}
+
+.sidenav a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #393939;
+    cursor: pointer;
+    display: block;
+    border-bottom: 3px solid white;
+    margin-bottom: 25px;    
+}
+.sidenav a:hover {
+    font-size: 1.1rem;
+    color: #393939;
+    cursor: pointer;
+    display: inline-block; 
+    border-bottom: 3px solid;
+    margin-bottom: 25px; 
+
+}

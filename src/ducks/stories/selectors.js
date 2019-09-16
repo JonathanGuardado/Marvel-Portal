@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 export default {
     hasStories: state => state.data !== undefined,
     getStoriesList: (state )=> {
@@ -7,6 +9,11 @@ export default {
     
       }
       return [];
+    },
+    getStoryById: (state, id) => {
+      if (_.find(state.data.results, (item) => item.id === id)) {
+        return _.find(state.data.results, (item) => item.id === id)
+      }      
     },
     getFilters: state => state.data,
     isLoading: state => state.loading,

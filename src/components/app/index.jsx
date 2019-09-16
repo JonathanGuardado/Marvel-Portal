@@ -14,7 +14,6 @@ function App() {
         <div className="container">
           <Header />
         </div>
-        {/* <div className="pt-2 pb-2"> */}
         <div>
           <Content />
         </div>

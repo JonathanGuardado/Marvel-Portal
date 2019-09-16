@@ -1,5 +1,5 @@
 import React from 'react';
-import StoryInfo from '../storyInfo';
+import StoryInfo from '../header';
 
 export default class StoryComics extends React.PureComponent {
     render() {

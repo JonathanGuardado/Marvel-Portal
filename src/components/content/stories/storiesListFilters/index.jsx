@@ -13,33 +13,33 @@ export default class StoriesListFilters extends React.PureComponent {
   }
   componentDidMount() {
     if (this.state.init) {
-        this.setState({ init: false });
-        const { filters,getStoriesList } = this.props;
-        getStoriesList(filters);                
+      this.setState({ init: false });
+      const { filters, getStoriesList, characterId, comicId } = this.props;
+
+      if (characterId) {
+        filters.characters = [{ id: characterId }];
+      } else {
+        filters.characters = null;
       }
+      if (comicId) {
+        filters.comics = [{ id: comicId }];
+      } else {
+        filters.comics = null;
+      }
+      getStoriesList(filters);
+    }
   }
 
-  componentDidUpdate(){
-    const { filters,name,characterId,comicId} = this.props;
-    
-    if (name) {
-        filters.name = name;
-    }
-    if (characterId) {
-      filters.characters = [{ id: characterId }];
-    }
-    if (comicId) {
-      filters.comics = [{ id: comicId }];
-    }
-
+  componentDidUpdate() {
+    const { filters, name } = this.props;
     if (!_.isEqual(this.state.filters, filters)) {
-        this.setState({ filters: filters });        
-        this.updateFilters(filters);
-      }
+      this.setState({ filters: filters });
+      this.updateFilters(filters);
+    }
   }
-  
+
   updateFilters(localFilter) {
-    const { getStoriesList} = this.props;
+    const { getStoriesList } = this.props;
     this.setState({
       filterTimeout: setTimeout(function () {
         getStoriesList(localFilter);

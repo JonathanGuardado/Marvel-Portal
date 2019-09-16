@@ -1,5 +1,5 @@
 import React from 'react';
-import { FixedSizeList as List } from "react-window";
+import { VariableSizeList as List } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
 import Row from "../storyRow"
 
@@ -13,7 +13,14 @@ export default class CharacterList extends React.PureComponent {
     
 
   render() {
-    const { stories } = this.props;     
+    const { stories } = this.props;    
+    const getItemSize = index => {     
+      const s=stories.results[index];
+      const col=Math.max(s.description.length*0.75, s.comics.items.map(e => e.name).join(', ').length,s.characters.items.map(e => e.name).join(', ').length);      
+      if(col>250) {
+      return  (col /100)*60
+      } return 130
+    }   
     return (  <div>    
      {stories.results ? 
      <div> {stories.results.length >0 ? 
@@ -38,7 +45,7 @@ export default class CharacterList extends React.PureComponent {
         className="List"
         height={600}
         itemCount={stories.count}
-        itemSize={120}
+        itemSize={getItemSize}
         itemData={stories.results}
         width={"100%"}
         key={2}

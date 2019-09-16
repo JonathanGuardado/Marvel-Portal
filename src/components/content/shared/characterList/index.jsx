@@ -1,5 +1,5 @@
 import React from 'react';
-import { FixedSizeList as List } from "react-window";
+import { VariableSizeList as List } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
 import Row from "../characterRow"
 import HeroSorteableColumn from "../../../dynamic/sorteableColumn/characters"
@@ -14,7 +14,13 @@ export default class CharacterList extends React.PureComponent {
     
 
   render() {
-    const { characters } = this.props;     
+    const { characters } = this.props;    
+    const getItemSize = index => {     
+      const col=characters.results[index].description;
+      if(col && col.length>800) {
+      return  (col.length /200)*30
+      } return 150
+    }  
     return (  <div>    
      {characters.results ? 
      <div> {characters.results.length >0 ? 
@@ -35,7 +41,7 @@ export default class CharacterList extends React.PureComponent {
         className="List"
         height={600}
         itemCount={characters.count}
-        itemSize={110}
+        itemSize={getItemSize}
         itemData={characters.results}
         width={"100%"}
         key={2}

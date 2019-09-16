@@ -13,33 +13,33 @@ export default class CharacterListFilters extends React.PureComponent {
   }
   componentDidMount() {
     if (this.state.init) {
-        this.setState({ init: false });
-        const { filters,getCharacterList } = this.props;
-        getCharacterList(filters);                
+      this.setState({ init: false });
+      const { filters, getCharacterList, storyId, comicId } = this.props;
+      if (storyId) {
+        filters.storiesIds = [{ id: storyId }];
+      }else{
+        filters.storiesIds = null;
       }
+      if (comicId) {
+        filters.comicsIds = [{ id: comicId }];
+      }else{
+        filters.comicsIds = null;
+      }
+      getCharacterList(filters);
+    }
   }
 
-  componentDidUpdate(){
-    const { filters,name,storyId,comicId} = this.props;
-    
-    if (name) {
-        filters.name = name;
-    }
-    if (storyId) {
-      filters.storyId = [{ OBJECT_ID: storyId }];
-    }
-    if (comicId) {
-      filters.comicId = [{ OBJECT_ID: comicId }];
-    }
+  componentDidUpdate() {
+    const { filters, name } = this.props;
 
     if (!_.isEqual(this.state.filters, filters)) {
-        this.setState({ filters: filters });        
-        this.updateFilters(filters);
-      }
+      this.setState({ filters: filters });
+      this.updateFilters(filters);
+    }
   }
-  
+
   updateFilters(localFilter) {
-    const { getCharacterList} = this.props;
+    const { getCharacterList } = this.props;
     this.setState({
       filterTimeout: setTimeout(function () {
         getCharacterList(localFilter);

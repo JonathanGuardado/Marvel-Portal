@@ -15,10 +15,10 @@ export default class Row extends React.PureComponent {
           </Link>
         </div>
         <div className="column-s-info">
-        {data[index].characters.items.map(e => e.name).join(',')}
+        {data[index].characters.items.map(e => e.name).join(', ')}
         </div>
         <div className="column-s-info">
-        {data[index].comics.items.map(e => e.name).join(',')}
+        {data[index].comics.items.map(e => e.name).join(', ')}
         </div>
         <div className="column-s-desciption">{data[index].description}</div>
 
