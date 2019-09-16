@@ -2,14 +2,13 @@ import { connect } from "react-redux";
 import { selectors, actions } from "../../../../ducks";
 import view from "./index.jsx";
 
-const mapStateToProps = (state, ownProps) => ({
-    filters: selectors.characters.getFilters(state),
-	characters: selectors.characters.getCharacterList(state)	
+const mapStateToProps = (state, ownProps) => ({    
+	comics: selectors.comics.getComicList(state)	
 });
 
 const mapDispatchToProps = (dispatch, state, props) => ({
-	getCharactersList: data => {
-		return dispatch(actions.characters.getCharactersList(data));
+	getComicsList: data => {
+		return dispatch(actions.comics.getComicsList(data));
 	}
 });
 

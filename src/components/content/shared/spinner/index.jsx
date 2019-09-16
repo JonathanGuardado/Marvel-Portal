@@ -3,15 +3,6 @@ import { ScaleLoader } from 'react-spinners';
 import PropTypes from 'prop-types';
 import './index.scss';
 
-
-/**
- * @description
- * overlay a spinner to the child component
- * @example
- * <Spinner>
- *   <CustomerList />
- * </Spinner>
- */
 export default class Spinner extends React.PureComponent {
   render() {
     const { loading, children } = this.props;

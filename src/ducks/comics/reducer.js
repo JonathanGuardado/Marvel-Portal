@@ -17,8 +17,7 @@ export default (state = INIT_STATE, action = {}) => {
       };
     }
     case types.COMICS_LIST_SUCCESS: {
-      const data = JSON.parse(action.result); 
-      console.log(data)     
+      const data = JSON.parse(action.result);       
       return {
         ...state,
         loading: false,

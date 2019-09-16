@@ -46,7 +46,7 @@ class CustomDropdown extends PureComponent {
                     components={makeAnimated()}
                     placeholder="All"
                     loadOptions={data =>  this.loadData({data: data})}
-                    getOptionLabel={option => option.title}
+                    getOptionLabel={option => option.title ? option.title :option.name }
                     getOptionValue={option => option.id}
                     onChange={setValuesFilters}
                     value={(filteredValues != undefined && filteredValues.length) > 0 ? filteredValues : null}

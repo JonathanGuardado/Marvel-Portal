@@ -1,5 +1,5 @@
 import React from 'react';
-import CharacterInfo from '../characterInfo';
+import Header from '../header';
 
 export default class CharacterStories extends React.PureComponent {
     render() {
@@ -7,7 +7,7 @@ export default class CharacterStories extends React.PureComponent {
             <div>
                 <div className="banner">
                     <div className="container">
-                        <CharacterInfo />
+                        <Header />
                     </div>
                 </div>
                 <div className="container">

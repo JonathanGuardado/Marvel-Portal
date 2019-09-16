@@ -29,9 +29,12 @@ html {
     background-color: #DCDCDC;
   }
 
-  .column{
+  .column-name,.sortable-column{
     width: 15%;
-    float: left;
+    float: left;    
+  }
+  .column-name a{
+    color:#393939
   }
   .column-picture{
     
@@ -42,5 +45,8 @@ html {
   .column-desciption{
     width: 69%;
     float: left;
+  }
 
+  .img-responsive{
+    border-radius: 5px
   }

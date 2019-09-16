@@ -5,8 +5,8 @@ const INIT_STATE = {
   data: [],
   error: {},
   name: undefined,
-  charactersIds: [],
-  storiesIds: []
+  characters: [],
+  stories: []
 };
 
 export default (state = INIT_STATE, action = {}) => {
@@ -14,19 +14,32 @@ export default (state = INIT_STATE, action = {}) => {
     case types.CHARACTERS_LIST_SET: {
       return {
         ...state,
-        charactersIds: action.charactersIds        
+        characters: action.characters        
       };
     }
     case types.STORIES_LIST_SET: {
       return {
         ...state,
-        storiesIds: action.storiesIds        
+        stories: action.stories        
       };
     }
     case types.COMIC_NAME: {      
       return {
         ...state,
         name:action.name
+      };
+    }
+    case types.COMICS_SORT_BY: {           
+      return {
+        ...state,
+        sortBy:action.sortBy
+      };
+    }
+    case types.COMICS_LIST_FILTERS_RESET: {      
+      return {
+        name: undefined,
+        characters: [],
+        stories: []
       };
     }
     default: {

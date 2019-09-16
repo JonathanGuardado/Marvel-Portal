@@ -30,8 +30,7 @@ export default (state = INIT_STATE, action = {}) => {
         name:action.name
       };
     }
-    case types.CHARACTERS_SORT_BY: {     
-      console.log(action.sortBy) 
+    case types.CHARACTERS_SORT_BY: {           
       return {
         ...state,
         sortBy:action.sortBy

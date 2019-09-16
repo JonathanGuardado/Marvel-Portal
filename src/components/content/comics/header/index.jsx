@@ -1,6 +1,6 @@
 import React from "react";
 import PageHeader from "../../shared/pageHeader";
-//import InputSearchStory from '../../../dynamic/inputSearchStory';
+import SearchComicsInput from '../../../dynamic/searchInput/comics';
 
 export default class ComicsHeader extends React.PureComponent {
   render() {   
@@ -8,7 +8,7 @@ export default class ComicsHeader extends React.PureComponent {
       <PageHeader>
         <div className="d-flex justify-content-between align-items-center">
           <div className="page-title pt-4 pb-4">Comics</div>
-          {/*<InputSearchStory />*/}
+          <SearchComicsInput />
         </div>        
       </PageHeader>
     );

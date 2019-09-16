@@ -17,8 +17,7 @@ export default (state = INIT_STATE, action = {}) => {
       };
     }
     case types.CHARACTERS_LIST_SUCCESS: {
-      const data = JSON.parse(action.result); 
-      console.log(data)     
+      const data = JSON.parse(action.result);        
       return {
         ...state,
         loading: false,
@@ -28,7 +27,6 @@ export default (state = INIT_STATE, action = {}) => {
     }
     case types.CHARACTERS_LIST_FAILURE: {
       const { error } = action;
-      console.log(action)
       return {
         ...state,
         loading: false,

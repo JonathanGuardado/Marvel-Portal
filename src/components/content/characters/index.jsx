@@ -3,8 +3,8 @@ import Header from './header';
 import Spinner from "../shared/spinner";
 import CharacterList from "../shared/characterList";
 import CharacterListFilters from "./characterListFilters";
-import DropDownComics from "../../dynamic/customDropdown/comics";
-import DropDownStories from "../../dynamic/customDropdown/story";
+import DropDownComics from "../../dynamic/customDropdown/charactersComics";
+import DropDownStories from "../../dynamic/customDropdown/charactersStories";
 import ClearFilters from "../../dynamic/clearFilters/characters";
 
 export default class Characters extends React.PureComponent {
