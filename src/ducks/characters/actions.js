@@ -5,8 +5,9 @@ import _ from "lodash";
 
 export default {
 
-  getCharacterList: ({name,comicsIds,storiesIds}) => {
+  getCharacterList: ({name,sortBy,comicsIds,storiesIds}) => {
     const { charactersApi } = config;    
+    console.log(sortBy)
     const comics = _.join(_.map(comicsIds, c => c.id), ",");
     const stories = _.join(_.map(storiesIds, s => s.id), ",");
     return {
@@ -15,7 +16,8 @@ export default {
         .get({
           nameStartsWith: name || undefined,
           comics: comics || undefined,
-          stories: stories || undefined
+          stories: stories || undefined,
+          orderBy: sortBy || undefined
         })
     };
   }  

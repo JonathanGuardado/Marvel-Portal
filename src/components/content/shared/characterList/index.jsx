@@ -2,6 +2,7 @@ import React from 'react';
 import { FixedSizeList as List } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
 import Row from "../../shared/row"
+import HeroSorteableColumn from "../../../dynamic/sorteableColumn/characters"
 
 export default class CharacterList extends React.PureComponent {
     constructor(props) {
@@ -25,7 +26,7 @@ export default class CharacterList extends React.PureComponent {
             Picture
             </div>
             <div className='column'>
-            Hero
+            <HeroSorteableColumn columnName="Hero" />            
             </div>
             <div className='column-description'>
             Description

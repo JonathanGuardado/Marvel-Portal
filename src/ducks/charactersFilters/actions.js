@@ -18,5 +18,9 @@ export default {
   setName: (name) => ({
     type: types.CHARACTER_NAME,
     name
+  }),
+  setSortBy: (sortBy) => ({
+    type: types.CHARACTERS_SORT_BY,
+    sortBy
   })
 }

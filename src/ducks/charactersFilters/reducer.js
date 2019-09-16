@@ -6,7 +6,8 @@ const INIT_STATE = {
   error: {},
   name: undefined,
   comicsIds: [],
-  storiesIds: []
+  storiesIds: [],
+  sortBy:undefined
 };
 
 export default (state = INIT_STATE, action = {}) => {
@@ -27,6 +28,13 @@ export default (state = INIT_STATE, action = {}) => {
       return {
         ...state,
         name:action.name
+      };
+    }
+    case types.CHARACTERS_SORT_BY: {     
+      console.log(action.sortBy) 
+      return {
+        ...state,
+        sortBy:action.sortBy
       };
     }
     case types.CHARACTER_FILTERS_RESET: {      
