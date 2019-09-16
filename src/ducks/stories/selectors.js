@@ -1,6 +1,6 @@
 export default {
     hasStories: state => state.data !== undefined,
-    getStoryList: (state )=> {
+    getStoriesList: (state )=> {
       if(state.data){
     
           return state.data;

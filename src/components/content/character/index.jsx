@@ -3,7 +3,7 @@ import Header from './header';
 import "./index.scss";
 //import ComicsList from '../shared/comicsList'
 
-export default class character extends React.PureComponent {
+export default class Character extends React.PureComponent {
     
     render() {
         const {character,filters} = this.props;        

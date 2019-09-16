@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 export default {
     hasComics: state => state.data !== undefined,
     getComicList: (state )=> {
@@ -7,7 +9,12 @@ export default {
     
       }
       return [];
-    },    
+    },  
+    getComicById: (state, id) => {
+      if (_.find(state.data.results, (item) => item.id === id)) {
+        return _.find(state.data.results, (item) => item.id === id)
+      }      
+    },  
     isLoading: state => state.loading,
   };
   

@@ -1,5 +1,5 @@
 import React from 'react';
-import ComicInfo from '../comicInfo';
+import ComicInfo from '../header';
 
 export default class ComicCharacters extends React.PureComponent {
     render() {

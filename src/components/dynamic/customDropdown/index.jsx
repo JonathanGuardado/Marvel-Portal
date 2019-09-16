@@ -29,7 +29,7 @@ class CustomDropdown extends PureComponent {
             this.setState({ typing: false, typingTimeout: setTimeout(function() {
                 var didSucceed = data;                 
                 didSucceed ? resolve(
-                    getList({title: data.data}).then(r=> r.data.results)
+                    getList({name: data.data}).then(r=> r.data.results)
                     ) : reject("Error");
             }, 1000)  });
        })

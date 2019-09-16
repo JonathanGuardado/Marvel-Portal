@@ -14,8 +14,7 @@ export default {
       promise: fetchWrapper(storiesApi)
         .get({
           characters: charactersIds || undefined,
-          comics: comicsIds || undefined,
-          name: name || undefined,
+          comics: comicsIds || undefined
         })
     };
   }

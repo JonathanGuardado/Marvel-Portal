@@ -7,16 +7,16 @@ export default {
   reset: () => ({
     type: types.STORIES_FILTERS_RESET,
   }),
-  setComicsIds: (comicsIds) => ({
+  setComics: (comics) => ({
     type: types.COMICS_LIST_SET,
-    comicsIds
+    comics
   }),
-  setCharactersIds: (charactersIds) => ({
+  setCharacters: (characters) => ({
     type: types.CHARACTERS_LIST_SET,
-    charactersIds
+    characters
   }),
   setName: (name) => ({
-    type: types.CHARACTER_NAME,
+    type: types.STORY_NAME,
     name
   })
 }
