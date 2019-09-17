@@ -25,7 +25,7 @@ export default class Story extends React.PureComponent {
                         </div>
                         <div className="col-md-10">
                         <img height="400" width="400" src={story && story.thumbnail ? story.thumbnail.path + "." + story.thumbnail.extension : "/marvel-universe-logo.jpg"} alt="" className="img-full" />
-                            <div className="text-justify pt-5">
+                            <div className="text-justify pt-5 w98">
                                 <h3>{story && story.description ? story.description : ""}</h3>
                             </div>
                             {story && story.id ?

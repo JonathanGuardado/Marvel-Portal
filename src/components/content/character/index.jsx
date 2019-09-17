@@ -25,7 +25,7 @@ export default class Character extends React.PureComponent {
                         </div>
                         <div className="col-md-10">
                             <img height="300" width="300" src={character ? character.thumbnail.path + "." + character.thumbnail.extension : ""} alt="" className="img-full" />
-                            <div className="text-justify pt-5">
+                            <div className="text-justify pt-5 w98">
                                 <h3>{character && character.description ? character.description : ""}</h3>
                             </div>
                             {character && character.id ?
