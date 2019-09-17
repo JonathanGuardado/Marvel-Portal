@@ -45,7 +45,7 @@ export default class CharacterList extends React.PureComponent {
         </div>
         : ""}
         <div className="counter"> 
-        {`Showing ${list ? list.length : 0} of ${total} Comics`}
+        {`Showing ${list ? list.length : 0} of ${total} Stories`}
       </div>
 
     </div>
