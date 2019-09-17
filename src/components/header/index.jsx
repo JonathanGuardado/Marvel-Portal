@@ -9,15 +9,18 @@ export default () => (
         {/* <Navigator to="/home">
         Home
       </Navigator> */}
+        <Navigator to="/">
+          Home
+        </Navigator>
         <Navigator to="/characters">
-         Characters
+          Characters
       </Navigator>
         <Navigator to="/comics">
-         Comics
+          Comics
       </Navigator>
         <Navigator to="/stories">
-         Stories
-      </Navigator>        
+          Stories
+      </Navigator>
       </div>
     </div>
   </div>

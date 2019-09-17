@@ -1,9 +1,25 @@
 import React from 'react';
-import './index.scss';
+import Header from './header';
+import "./index.scss";
 
+export default class Story extends React.PureComponent {
 
-export default class Home extends React.PureComponent {
     render() {
-        return("MARVEL")
+
+        return (
+            <div>
+                <div className="banner">
+                    <div className="container">
+                        <Header name={"Home"} />
+                    </div>
+                </div>                
+                <div className="container">
+                    <div className="row">
+                        <img height="600" width="600" src={"/marvel-universe-logo.jpg"} alt="" className="img-full" />
+                    </div>
+                </div>
+            </div>
+
+        )
     }
 }

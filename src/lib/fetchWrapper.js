@@ -42,7 +42,7 @@ const getDefaultHeaders = () => ({
 
  const fetchWrapper =()=> (endPointAddress) => ({
     get: (data, init) => {    
-      data.limit = 50;// setting request results to 50 
+      data.limit = 100;// setting request results to 100 
       const query = qs.stringify(data, { encode: false });      
       const input = `${endPointAddress}?${key}&${query}`;
       const requestInitBuilder = new ObjectBuilder();

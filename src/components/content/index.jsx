@@ -16,7 +16,7 @@ import StoryComics from "./story/storyComics";
 export default () => (
   <Switch>
 
-    <Route exact path="/home" component={Home}></Route>
+    <Route exact path="/" component={Home}></Route>
 
     <Route path="/characters">
       <Switch>
