@@ -25,7 +25,7 @@ export default class Comic extends React.PureComponent {
                         </div>
                         <div className="col-md-10">
                             <img height="400" width="400" src={comic ? comic.thumbnail.path + "." + comic.thumbnail.extension : ""} alt="" className="img-full" />
-                            <div className="col-md-10 pt-5">
+                            <div className="text-justify pt-5">
                                 <h3>{comic && comic.description ? comic.description : ""}</h3>
                             </div>
                             {comic && comic.id ?
