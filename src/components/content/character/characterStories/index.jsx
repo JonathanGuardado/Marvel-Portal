@@ -3,15 +3,13 @@ import Header from '../header';
 import LeftMenu from '../leftMenu';
 import Spinner from "../../shared/spinner";
 import "../index.scss";
-import ComicsList from '../../shared/comicList';
-import ComicsListFilters from '../../comics/comicsListFilters';
 import StoriesList from '../../shared/storiesList';
 import StoriesListFilters from '../../stories/storiesListFilters';
 
 export default class CharacterStories extends React.PureComponent {
 
     render() {
-        const { character, filters, isLoadingComics, isLoadingStories } = this.props;
+        const { character, isLoadingStories } = this.props;
         console.log(this.props)
         return (
             <div>

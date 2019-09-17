@@ -29,22 +29,25 @@ html {
     background-color: #DCDCDC;
   }
 
-  .column-name{
-    width: 20%;
+  .column-c-info{
+    width: 15%;
     float: left;    
   }
-  .column-name a{
+  .column-c-info a{
     color:#393939
   }
-  .column-picture{
+  .column-c-picture{
     
-    width: 10%;
+    width: 15%;
     float: left;
   }
 
-  .column-desciption{
-    width: 69%;
+  .column-c-description{
+    width: 39%;
     float: left;
+    max-height: 94%;
+    overflow: hidden;
+    text-overflow: ellipsis
   }
 
   .img-responsive{

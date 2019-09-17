@@ -9,7 +9,7 @@ import CharactersListFilters from '../characters/characterListFilters';
 export default class Comic extends React.PureComponent {
 
     render() {
-        const { comic, filters, isLoadingCharacters, isLoadingStories } = this.props;
+        const { comic, isLoadingCharacters } = this.props;
         console.log(comic)
         return (
             <div>

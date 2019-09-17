@@ -6,10 +6,10 @@ import "../index.scss";
 import StoriesList from '../../shared/storiesList';
 import StoriesListFilters from '../../stories/storiesListFilters';
 
-export default class ComicsStories extends React.PureComponent {
+export default class ComicStories extends React.PureComponent {
 
     render() {
-        const { comic, filters,  isLoadingStories } = this.props;
+        const { comic,  isLoadingStories } = this.props;
         console.log(this.props)
         return (
             <div>

@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { rootReducer } from './ducks';
 import PromiseMiddleware  from './lib/promiseMiddleware';
-import thunk  from 'redux-thunk'
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app';

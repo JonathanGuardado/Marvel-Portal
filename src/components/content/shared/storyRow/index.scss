@@ -39,11 +39,17 @@ html {
   .column-s-info{    
     width: 25%;
     float: left;    
+    max-height: 98%;
+    overflow: hidden;
+    text-overflow: ellipsis
   }
  
   .column-s-desciption{
     width: 30%;
     float: left;
+    max-height: 98%;
+    overflow: hidden;
+    text-overflow: ellipsis
   }
 
   .img-responsive{

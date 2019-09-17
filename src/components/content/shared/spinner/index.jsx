@@ -1,6 +1,5 @@
 import React from 'react';
 import { ScaleLoader } from 'react-spinners';
-import PropTypes from 'prop-types';
 import './index.scss';
 
 export default class Spinner extends React.PureComponent {

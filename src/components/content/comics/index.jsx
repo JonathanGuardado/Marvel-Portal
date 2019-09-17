@@ -4,7 +4,7 @@ import Spinner from "../shared/spinner";
 import ComicsList from "../shared/comicList";
 import ComicsListFilters from "./comicsListFilters";
 import DropDownCharacters from "../../dynamic/customDropdown/comicsCharacters";
-import DropDownStories from "../../dynamic/customDropdown/comicsStories";
+import DropDownFormats from "../../dynamic/customDropdown/comicsFormats";
 import ClearFilters from "../../dynamic/clearFilters/comics";
 
 export default class Comics extends React.PureComponent {
@@ -26,9 +26,9 @@ export default class Comics extends React.PureComponent {
                                 <DropDownCharacters isMulti title="Characters" />
                             </div>
                             <div className="w-25 pl-5 list-filter-item">
-                                <DropDownStories isMulti title="Stories" />
+                                <DropDownFormats title="Format" />
                             </div>
-                            <div className="pl-5 pt-4 list-filter-item">
+                            <div className="list-filter-item">
                             <ClearFilters className="clear-filter" />
                         </div>
                         </div>
@@ -37,7 +37,7 @@ export default class Comics extends React.PureComponent {
                     <div className="container">
                         <div className="items pl-3">
                             <ComicsListFilters />
-                            <ComicsList />
+                            <ComicsList size={1.40}/>
                         </div>
                     </div>
                 </Spinner>

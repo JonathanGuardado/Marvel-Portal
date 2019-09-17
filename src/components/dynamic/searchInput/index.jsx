@@ -43,15 +43,15 @@ class SearchInput extends React.PureComponent {
 
   render() {
     const { value } = this.state;
-    const { placeholder,initValue } = this.props;
-    const { inputClassName= this.props.inputClassName?this.props.inputClassName:"searchInput" } = this.props;
+    const { placeholder,initValue,inputType } = this.props;
+
     let stateChange = this.stateChanged.value;
     this.stateChanged.value=false;
     return (
       <div className="search">        
         <input          
-          type="text"
-          value={stateChange==true?value:initValue}
+          type={inputType||"text"}
+          value={stateChange===true?value:initValue}
           onKeyPress={this.handle}
           onChange={this.handleChange}
           onBlur ={this._onBlur}

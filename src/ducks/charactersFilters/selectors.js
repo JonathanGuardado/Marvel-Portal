@@ -1,4 +1,4 @@
 export default {
-  getFilters: state => state 
+  getFilters: state => state, 
   };
   

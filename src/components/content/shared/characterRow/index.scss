@@ -29,8 +29,8 @@ html {
     background-color: #DCDCDC;
   }
 
-  .column-name,.sortable-column{
-    width: 20%;
+  .column-name{
+    width: 17%;
     float: left;    
   }
   .column-name a{
@@ -38,15 +38,32 @@ html {
   }
   .column-picture{
     
-    width: 10%;
+    width: 9%;
     float: left;
   }
 
-  .column-desciption{
-    width: 69%;
+  .column-description{
+    width: 67%;
     float: left;
+    max-height: 98%;
+    overflow: hidden;
+    text-overflow: ellipsis
   }
 
   .img-responsive{
     border-radius: 5px
+  }
+
+  .column-fav{
+    width: 7%;
+    float: left;
+    font-size: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .column-h-fav{
+    width: 7%;
+    float: left;        
+    cursor: pointer;
   }

@@ -7,8 +7,8 @@ export default class LeftNavigation extends React.PureComponent {
   render() {
     return (
     <div className="sidenav-left">
-      <Navigator to={"/characters/"+ this.props.id}>Character's comics</Navigator>
-      <Navigator to={"/characters/" + this.props.id + "/stories"}>Character's stories</Navigator>
+      <Navigator to={"/stories/"+ this.props.id}>Story's characters</Navigator>
+      <Navigator to={"/stories/" + this.props.id + "/comics"}>Story's Comics</Navigator>
     </div>
   )
   }

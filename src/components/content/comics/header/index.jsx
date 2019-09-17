@@ -1,6 +1,7 @@
 import React from "react";
 import PageHeader from "../../shared/pageHeader";
 import SearchComicsInput from '../../../dynamic/searchInput/comics';
+import "./index.scss";
 
 export default class ComicsHeader extends React.PureComponent {
   render() {   

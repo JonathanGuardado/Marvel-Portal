@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import createCachedSelector from 're-reselect';
 import hash from 'object-hash';
 

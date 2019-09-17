@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-import { actions, selectors } from '../../../ducks';
+import { actions } from '../../../ducks';
 import view from './index.jsx';
 
 

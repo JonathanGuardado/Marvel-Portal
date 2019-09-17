@@ -27,7 +27,7 @@ export default class Characters extends React.PureComponent {
                             <div className="w-25 pl-5 list-filter-item">
                                 <DropDownStories isMulti title="Stories" />
                             </div>
-                            <div className="pl-5 pt-4 list-filter-item">
+                            <div className=" list-filter-item">
                             <ClearFilters className="clear-filter" />
                         </div>
                         </div>
@@ -36,7 +36,7 @@ export default class Characters extends React.PureComponent {
                     <div className="container">
                         <div className="items pl-3">
                             <CharacterListFilters />
-                            <CharacterList />
+                            <CharacterList size={1.4} />
                         </div>
                     </div>
                 </Spinner>

@@ -5,13 +5,11 @@ import Spinner from "../shared/spinner";
 import "./index.scss";
 import ComicsList from '../shared/comicList';
 import ComicsListFilters from '../comics/comicsListFilters';
-import StoriesList from '../shared/storiesList';
-import StoriesListFilters from '../stories/storiesListFilters';
 
 export default class Character extends React.PureComponent {
 
     render() {
-        const { character, filters, isLoadingComics, isLoadingStories } = this.props;
+        const { character, isLoadingComics } = this.props;
         console.log(character)
         return (
             <div>
@@ -26,7 +24,7 @@ export default class Character extends React.PureComponent {
                             <LeftMenu id={character ? character.id : null} />
                         </div>
                         <div className="col-md-10">
-                            <img height="400" width="400" src={character ? character.thumbnail.path + "." + character.thumbnail.extension : ""} alt="" className="img-full" />
+                            <img height="300" width="300" src={character ? character.thumbnail.path + "." + character.thumbnail.extension : ""} alt="" className="img-full" />
                             <div className="col-md-10 pt-5">
                                 <h3>{character && character.description ? character.description : ""}</h3>
                             </div>

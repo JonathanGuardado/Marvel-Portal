@@ -6,7 +6,9 @@ const INIT_STATE = {
   error: {},
   name: undefined,
   characters: [],
-  stories: []
+  stories: [],
+  issue:undefined,
+  format:undefined
 };
 
 export default (state = INIT_STATE, action = {}) => {
@@ -35,11 +37,25 @@ export default (state = INIT_STATE, action = {}) => {
         sortBy:action.sortBy
       };
     }
+    case types.ISSUE_LIST_SET: {      
+      return {
+        ...state,
+        issue:action.issue
+      };
+    }
+    case types.FORMAT_LIST_SET: {       
+      return {
+        ...state,
+        format:action.format
+      };
+    }    
     case types.COMICS_LIST_FILTERS_RESET: {      
       return {
         name: undefined,
         characters: [],
-        stories: []
+        stories: [],
+        issue:undefined,
+        format:null
       };
     }
     default: {

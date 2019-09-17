@@ -4,6 +4,7 @@ import comics from "./comics";
 import comicsFilters from "./comicsFilters";
 import stories from "./stories";
 import storiesFilters from "./storiesFilters";
+import favorites from "./favorites";
 
 import {
     combineActions,
@@ -17,7 +18,8 @@ import {
     comics: comics.actions,
     comicsFilters: comicsFilters.actions,
     stories: stories.actions,
-    storiesFilters: storiesFilters.actions
+    storiesFilters: storiesFilters.actions,
+    favorites: favorites.actions
   })
   export const selectors = combineSelectors({
     characters: characters.selectors,    
@@ -25,7 +27,8 @@ import {
     comics: comics.selectors,
     comicsFilters: comicsFilters.selectors,
     stories: stories.selectors,
-    storiesFilters: storiesFilters.selectors
+    storiesFilters: storiesFilters.selectors,
+    favorites: favorites.selectors
   })
   const appReducer = combineReducers({
     characters: characters.reducer,    
@@ -33,10 +36,11 @@ import {
     comics: comics.reducer,
     comicsFilters: comicsFilters.reducer,
     stories: stories.reducer,
-    storiesFilters: storiesFilters.reducer
+    storiesFilters: storiesFilters.reducer,
+    favorites: favorites.reducer
   })
   export const rootReducer = (state, action) => {
-    if (action.type == "userPreferences:USERPREF_APPLICATION_CACHE_RESET") {
+    if (action.type === "userPreferences:USERPREF_APPLICATION_CACHE_RESET") {
       console.log("Number of items currently in local storage " + localStorage.length);
       localStorage.clear();
       console.log("Number of items in local storage after cache reset " + localStorage.length);

@@ -40,8 +40,9 @@ export default (state = INIT_STATE, action = {}) => {
       return {
         name: undefined,
         comicsIds: [],
-        storiesIds: []
-      };
+        storiesIds: [],
+        sortBy:undefined
+      };      
     }
     
     default: {

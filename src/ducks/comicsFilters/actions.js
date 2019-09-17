@@ -1,5 +1,3 @@
-import config from '../../config/endpointsConf';
-import fetchWrapper from '../../lib/fetchWrapper';
 import types from './types';
 
 export default {
@@ -18,6 +16,14 @@ export default {
   setName: (name) => ({
     type: types.COMIC_NAME,
     name
+  }),
+  setFormat: (format) => ({    
+    type: types.FORMAT_LIST_SET,
+    format
+  }),
+  setIssue: (issue) => ({
+    type: types.ISSUE_LIST_SET,
+    issue
   }),
   setSortBy: (sortBy) => ({
     type: types.COMICS_SORT_BY,

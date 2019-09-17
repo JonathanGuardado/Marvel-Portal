@@ -6,11 +6,13 @@ import view from './index.jsx';
 
 
 const mapStateToProps = (state) => ({  
-  columnValue : 'name'
+  placeholder : "Type Issue #",  
+  initValue:selectors.comicsFilters.getFilters(state).issue  
+  
 });
 
 const mapDispatchToProps = (dispatch) => ({  
-    toggleHandler:(o)  => dispatch(actions.charactersFilters.setSortBy(o))
+  onSearch:(o)  => dispatch(actions.comicsFilters.setIssue(o))
 });
 
 

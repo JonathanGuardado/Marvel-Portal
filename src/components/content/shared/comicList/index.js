@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, state, props) => ({
 	getComicsList: data => {
 		return dispatch(actions.comics.getComicsList(data));
-	}
+	},
+	sortBy:(o)  => dispatch(actions.comicsFilters.setSortBy(o))
 });
 
 export default connect(

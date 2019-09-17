@@ -1,5 +1,4 @@
 import React from 'react';
-import autoBind from 'react-autobind';
 import './index.scss';
 import { FaSortUp,FaSortDown,FaSort } from "react-icons/fa";
 
@@ -40,7 +39,7 @@ toggleHandler = () => {
 }
 
   render() {
-    const { columnValue,columnName, toggleHandler, sortType } = this.props;
+    const { columnName } = this.props;
     
     return (
       <div className="sortable-column" onClick={this.toggleHandler}>

@@ -6,7 +6,7 @@ import view from './index.jsx';
 
 
 const mapStateToProps = (state) => ({  
-  placeholder : "Search Comics by Name",
+  placeholder : "Search Comics by Title",
   initValue:selectors.comicsFilters.getFilters(state).name  
   
 });

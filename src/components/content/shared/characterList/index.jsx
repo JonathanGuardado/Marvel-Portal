@@ -1,35 +1,34 @@
 import React from 'react';
-import { VariableSizeList as List } from "react-window";
-import AutoSizer from "react-virtualized-auto-sizer";
+import { FixedSizeList as List } from "react-window";
 import Row from "../characterRow"
-import HeroSorteableColumn from "../../../dynamic/sorteableColumn/characters"
+import SorteableColumn from "../../../dynamic/sorteableColumn/"
+import favorites from '../../../../ducks/favorites';
 
 export default class CharacterList extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-          filters: this.props.filters
+          filters: this.props.filters,
+          favFlag:false
         };
       }
     
 
   render() {
-    const { characters } = this.props;    
-    const getItemSize = index => {     
-      const col=characters.results[index].description;
-      if(col && col.length>800) {
-      return  (col.length /200)*30
-      } return 150
-    }  
+    const { characters,sortBy,size,favorites,favFlag,setFavFlag } = this.props;    
+    const list= favFlag ? favorites : characters.results;
     return (  <div>    
-     {characters.results ? 
-     <div> {characters.results.length >0 ? 
+     {list ? 
+     <div> {list.length >0 ? 
       [<div key={1} style={{height:'2rem'}}>
+            <div className='column-h-fav' style={{fontWeight: favFlag ? 600 : 300}} onClick={()=>setFavFlag(!favFlag)} > 
+            Show Favorites
+            </div>
             <div className='column-picture'>
             Picture
             </div>
-            <div className='column'>
-            <HeroSorteableColumn columnName="Hero" />            
+            <div className='column-name'>
+            <SorteableColumn columnName="Hero" columnValue="name" toggleHandler={sortBy} />            
             </div>
             <div className='column-description'>
             Description
@@ -39,10 +38,10 @@ export default class CharacterList extends React.PureComponent {
       ,
       <List
         className="List"
-        height={600}
-        itemCount={characters.count}
-        itemSize={getItemSize}
-        itemData={characters.results}
+        height={500*(size||1)}
+        itemCount={list.length}
+        itemSize={155}
+        itemData={list}
         width={"100%"}
         key={2}
         //ref={ref}

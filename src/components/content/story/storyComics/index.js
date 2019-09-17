@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import { selectors, actions } from "../../../ducks";
+import { selectors } from "../../../../ducks";
 import view from "./index.jsx";
 
-const mapStateToProps = (state, ownProps) => ({	
-	isLoadingCharacters: selectors.characters.isLoading(state), 
+const mapStateToProps = (state, ownProps) => (console.log(state),{	
+	isLoadingComics: selectors.comics.isLoading(state), 
 	story: selectors.stories.getStoryById(state,parseInt(ownProps.match.params.id))	
 });
 

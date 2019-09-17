@@ -1,5 +1,3 @@
-import config from '../../config/endpointsConf';
-import fetchWrapper from '../../lib/fetchWrapper';
 import types from './types';
 
 export default {

@@ -30,7 +30,7 @@ export default class ComicsListFilters extends React.PureComponent {
   }
 
   componentDidUpdate() {
-    const { filters, name } = this.props;
+    const { filters } = this.props;
    
     if (!_.isEqual(this.state.filters, filters)) {      
       this.setState({ filters: filters });
