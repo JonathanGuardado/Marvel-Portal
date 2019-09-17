@@ -21,11 +21,12 @@ export default class ComicsList extends React.PureComponent {
   render() {
     const { comics, sortBy, size, favorites, favFlag, setFavFlag } = this.props;
     const list = favFlag ? favorites : comics.results;
+    const total=favFlag ? list.length : comics.total;
 
     return (<div>
       {list ?
-        <div> {list.length > 0 ?
-          [<div key={1} style={{ height: '2rem' }}>
+        <div> 
+          <div key={1} style={{ height: '2rem' }}>
             <div className='column-h-fav' style={{ fontWeight: favFlag ? 600 : 300 }} onClick={() => setFavFlag(!favFlag)} >
               Show Favorites
           </div>
@@ -45,19 +46,18 @@ export default class ComicsList extends React.PureComponent {
               <SorteableColumn columnName="Issue Number" columnValue="issueNumber" toggleHandler={sortBy} />
               <div style={{ float: "left", paddingLeft: "5%", cursor: "pointer" }}><FaSearch id="searchPopUpTrigger" /></div>
             </div>
-          </div>,
+          </div>
           <Popover placement='top' key="issuePop" isOpen={this.state.show} target='searchPopUpTrigger' toggle={this.toggleHandler} onBlur={this.toggleHandler}>
             <PopoverHeader>Serch by Issue Number</PopoverHeader>
             <PopoverBody>
               <SearchComicsInput inputType="number" />
             </PopoverBody>
           </Popover>
-
-            ,
+          {list.length > 0 ?
           <List
             className="List"
             height={500 * (size || 1)}
-            itemCount={list.length}
+            itemCount={total}
             itemSize={155}
             itemData={list}
             width={"100%"}
@@ -65,9 +65,13 @@ export default class ComicsList extends React.PureComponent {
           //ref={ref}
           >
             {Row}
-          </List>] : <center><div style={{ height: '600px', paddingTop: '200px' }}><h1> Comics Not Found</h1></div></center>}
+          </List> : <center><div style={{ height: '600px', paddingTop: '200px' }}><h1> Comics Not Found</h1></div></center>}
         </div>
         : ""}
+        <div className="counter"> 
+        {`Showing ${list ? list.length : 0} of ${total} Comics`}
+      </div>
+       
 
     </div>
     );
