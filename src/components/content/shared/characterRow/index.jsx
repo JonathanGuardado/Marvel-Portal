@@ -9,12 +9,11 @@ export default class Row extends React.PureComponent {
   render() {
     const { index, style, data,isFavorite,removeFavorite,addToFavorites } = this.props;
     let id=data[index].id;
-    
+
     return (
       <div className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
         <div className="column-fav">
-        {isFavorite(id) ? <IoIosHeart onClick={() => removeFavorite(data[index])}/> : <IoIosHeartEmpty onClick={() => addToFavorites(data[index])}/>}
-        
+        {isFavorite(id) ? <IoIosHeart onClick={() => removeFavorite(data[index])}/> : <IoIosHeartEmpty onClick={() => addToFavorites(data[index])}/>}        
         </div>
         <div className="column-picture">
           <Link to={`/characters/${data[index].id}`}>

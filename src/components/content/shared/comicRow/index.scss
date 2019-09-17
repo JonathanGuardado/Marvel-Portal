@@ -30,7 +30,7 @@ html {
   }
 
   .column-c-info{
-    width: 15%;
+    width: 14%;
     float: left;    
   }
   .column-c-info a{
@@ -38,12 +38,12 @@ html {
   }
   .column-c-picture{
     
-    width: 15%;
+    width: 12%;
     float: left;
   }
 
   .column-c-description{
-    width: 39%;
+    width: 37%;
     float: left;
     max-height: 94%;
     overflow: hidden;
@@ -52,4 +52,19 @@ html {
 
   .img-responsive{
     border-radius: 5px
+  }
+
+  .column-c-fav{
+    width: 5%;
+    float: left;
+    padding-right: 2rem !important;
+    font-size: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .column-h-fav{
+    width: 7%;
+    float: left;        
+    cursor: pointer;
   }

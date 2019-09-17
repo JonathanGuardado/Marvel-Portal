@@ -10,7 +10,6 @@ export default class ComicsList extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      filters: this.props.filters,
       show: false
     };
   }
@@ -20,12 +19,16 @@ export default class ComicsList extends React.PureComponent {
 
 
   render() {
-    const { comics, sortBy,size } = this.props;    
+    const { comics, sortBy, size, favorites, favFlag, setFavFlag } = this.props;
+    const list = favFlag ? favorites : comics.results;
 
     return (<div>
-      {comics.results ?
-        <div> {comics.results.length > 0 ?
+      {list ?
+        <div> {list.length > 0 ?
           [<div key={1} style={{ height: '2rem' }}>
+            <div className='column-h-fav' style={{ fontWeight: favFlag ? 600 : 300 }} onClick={() => setFavFlag(!favFlag)} >
+              Show Favorites
+          </div>
             <div className='column-c-picture'>
               Picture
             </div>
@@ -40,7 +43,7 @@ export default class ComicsList extends React.PureComponent {
             </div>
             <div className='column-c-info'>
               <SorteableColumn columnName="Issue Number" columnValue="issueNumber" toggleHandler={sortBy} />
-              <div style={{ float: "left", paddingLeft: "5%", cursor: "pointer" }}><FaSearch id="searchPopUpTrigger"/></div>
+              <div style={{ float: "left", paddingLeft: "5%", cursor: "pointer" }}><FaSearch id="searchPopUpTrigger" /></div>
             </div>
           </div>,
           <Popover placement='top' isOpen={this.state.show} target='searchPopUpTrigger' toggle={this.toggleHandler} onBlur={this.toggleHandler}>
@@ -53,10 +56,10 @@ export default class ComicsList extends React.PureComponent {
             ,
           <List
             className="List"
-            height={500*(size||1)}
-            itemCount={comics.count}
+            height={500 * (size || 1)}
+            itemCount={list.length}
             itemSize={155}
-            itemData={comics.results}
+            itemData={list}
             width={"100%"}
             key={2}
           //ref={ref}

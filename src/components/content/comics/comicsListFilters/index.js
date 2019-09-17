@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    getComicsList: (filters) => dispatch(actions.comics.getComicsList(filters))
+    getComicsList: (filters) => dispatch(actions.comics.getComicsList(filters)).then(dispatch(actions.favorites.setFavFlag(false)))
   
 });
 

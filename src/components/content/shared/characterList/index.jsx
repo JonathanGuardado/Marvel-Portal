@@ -2,18 +2,9 @@ import React from 'react';
 import { FixedSizeList as List } from "react-window";
 import Row from "../characterRow"
 import SorteableColumn from "../../../dynamic/sorteableColumn/"
-import favorites from '../../../../ducks/favorites';
 
 export default class CharacterList extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-          filters: this.props.filters,
-          favFlag:false
-        };
-      }
     
-
   render() {
     const { characters,sortBy,size,favorites,favFlag,setFavFlag } = this.props;    
     const list= favFlag ? favorites : characters.results;

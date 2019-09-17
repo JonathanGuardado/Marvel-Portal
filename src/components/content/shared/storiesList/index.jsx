@@ -3,52 +3,48 @@ import { FixedSizeList as List } from "react-window";
 import Row from "../storyRow"
 
 export default class CharacterList extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-          filters: this.props.filters
-        };
-      }
-    
 
   render() {
-    const { stories ,size} = this.props;    
- 
-    return (  <div>    
-     {stories.results ? 
-     <div> {stories.results.length >0 ? 
-      [<div key={1} style={{height:'2rem'}}>
-           
+    const { stories, size, favorites, favFlag, setFavFlag } = this.props;
+    const list = favFlag ? favorites : stories.results;
+
+    return (<div>
+      {list ?
+        <div> {list.length > 0 ?
+          [<div key={1} style={{ height: '2rem' }}>
+            <div className='column-h-fav' style={{ fontWeight: favFlag ? 600 : 300 }} onClick={() => setFavFlag(!favFlag)} >
+              Show Favorites
+            </div>
             <div className='column-s-name'>
-            Title       
+              Title
             </div>
             <div className='column-s-info'>
-            Characters      
+              Characters
             </div>
             <div className='column-s-info'>
-            Comics 
+              Comics
             </div>
             <div className='column-s-description'>
-            Description
-            </div>      
-      </div>
+              Description
+            </div>
+          </div>
 
-      ,
-      <List
-        className="List"
-        height={500*(size||1)}
-        itemCount={stories.count}
-        itemSize={155}
-        itemData={stories.results}
-        width={"100%"}
-        key={2}
-        //ref={ref}
-      >
-      {Row}
-      </List>]  :<center><div style={{height:'600px',paddingTop:'200px'}}><h1> Stories Not Found</h1></div></center>}
-      </div>
-      : "" }
-       
+            ,
+          <List
+            className="List"
+            height={500 * (size || 1)}
+            itemCount={list.length}
+            itemSize={155}
+            itemData={list}
+            width={"100%"}
+            key={2}
+          //ref={ref}
+          >
+            {Row}
+          </List>] : <center><div style={{ height: '600px', paddingTop: '200px' }}><h1> Stories Not Found</h1></div></center>}
+        </div>
+        : ""}
+
     </div>
     );
   }
