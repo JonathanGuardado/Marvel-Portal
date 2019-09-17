@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 
 export default () => (
-  <div id="no-print">
+  <div >
     <div className="footer">
       <div className="footer-logo" />
       <div className="footer-copyright">

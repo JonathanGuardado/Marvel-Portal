@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { selectors, actions } from "../../../ducks";
+import { selectors } from "../../../ducks";
 import view from "./index.jsx";
 
 const mapStateToProps = (state, ownProps) => ({	

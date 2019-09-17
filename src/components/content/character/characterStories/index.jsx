@@ -10,7 +10,7 @@ export default class CharacterStories extends React.PureComponent {
 
     render() {
         const { character, isLoadingStories } = this.props;
-        console.log(this.props)
+        
         return (
             <div>
                 <div className="banner">

@@ -27,7 +27,7 @@ export default (state = INIT_STATE, action = {}) => {
     }
     case types.COMICS_LIST_FAILURE: {
       const { error } = action;
-      console.log(action)
+      
       return {
         ...state,
         loading: false,

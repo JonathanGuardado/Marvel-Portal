@@ -46,7 +46,7 @@ export default class ComicsList extends React.PureComponent {
               <div style={{ float: "left", paddingLeft: "5%", cursor: "pointer" }}><FaSearch id="searchPopUpTrigger" /></div>
             </div>
           </div>,
-          <Popover placement='top' isOpen={this.state.show} target='searchPopUpTrigger' toggle={this.toggleHandler} onBlur={this.toggleHandler}>
+          <Popover placement='top' key="issuePop" isOpen={this.state.show} target='searchPopUpTrigger' toggle={this.toggleHandler} onBlur={this.toggleHandler}>
             <PopoverHeader>Serch by Issue Number</PopoverHeader>
             <PopoverBody>
               <SearchComicsInput inputType="number" />

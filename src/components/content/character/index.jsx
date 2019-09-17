@@ -10,7 +10,7 @@ export default class Character extends React.PureComponent {
 
     render() {
         const { character, isLoadingComics } = this.props;
-        console.log(character)
+        
         return (
             <div>
                 <div className="banner">

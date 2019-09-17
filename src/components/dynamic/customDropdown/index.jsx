@@ -65,8 +65,7 @@ class CustomDropdown extends PureComponent {
                         options={list}
                         getOptionLabel={option => option.title ? option.title : option.name}
                         getOptionValue={option => option.id}
-                        onChange={this.handleSelected}
-                        //value={(filteredValues != undefined && filteredValues.length) > 0 ? filteredValues.id : null}
+                        onChange={this.handleSelected}                        
                         value={this.state.s}
                     /> :
                     <AsyncSelect
