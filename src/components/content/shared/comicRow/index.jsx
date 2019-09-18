@@ -7,7 +7,8 @@ export default class Row extends React.PureComponent {
 
   render() {
     const { index, style, data,isFavorite,removeFavorite,addToFavorites } = this.props;
-    let id=data[index].id;
+    let id= data[index] ? data[index].id : null;
+    
     return (
       <div className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
       <div className="column-c-fav">

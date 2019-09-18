@@ -15,6 +15,8 @@ export default class ComicsListFilters extends React.PureComponent {
     if (this.state.init) {
       this.setState({ init: false });
       const { filters, getComicsList,storyId, characterId } = this.props;
+      filters.format=null;
+      filters.issue=null;
       if (storyId) {
         filters.stories = [{ id: storyId }];
       }else{
@@ -27,7 +29,7 @@ export default class ComicsListFilters extends React.PureComponent {
       }
       getComicsList(filters);
     }
-  }
+  }  
 
   componentDidUpdate() {
     const { filters } = this.props;
