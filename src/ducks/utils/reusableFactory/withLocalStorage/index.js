@@ -1,10 +1,8 @@
 
 export default (stateId, reducer) => {
-  let cache; // make the cache default to undefined
   
   return (
-    state = cache
-    ,
+    state = JSON.parse(localStorage.getItem(stateId))|| undefined,
     action
   ) => {
     const newState = reducer(state, action);

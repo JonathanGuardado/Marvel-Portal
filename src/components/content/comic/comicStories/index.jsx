@@ -5,11 +5,12 @@ import Spinner from "../../shared/spinner";
 import "../index.scss";
 import StoriesList from '../../shared/storiesList';
 import StoriesListFilters from '../../stories/storiesListFilters';
+import { IoIosHeartEmpty,IoIosHeart } from "react-icons/io";
 
 export default class ComicStories extends React.PureComponent {
 
     render() {
-        const { comic,  isLoadingStories } = this.props;
+        const { comic,  isLoadingStories ,isFavorite,removeFavorite,addToFavorites} = this.props;
         
         return (
             <div>
@@ -24,8 +25,11 @@ export default class ComicStories extends React.PureComponent {
                             <LeftMenu id={comic ? comic.id : null} />
                         </div>
                         <div className="col-md-10">
+                        <div className="favorite">
+                        {isFavorite(comic ? comic.id : null) ? <IoIosHeart onClick={() => removeFavorite(comic)}/> : <IoIosHeartEmpty onClick={() => addToFavorites(comic)}/>}        
+                        </div>
                             <img height="400" width="400" src={comic ? comic.thumbnail.path + "." + comic.thumbnail.extension : ""} alt="" className="img-full" />
-                            <div className="col-md-10 pt-5">
+                            <div className="pt-5 text-justify  w98">
                                 <h3>{comic && comic.description ? comic.description : ""}</h3>
                             </div>
                             {comic && comic.id ?                                

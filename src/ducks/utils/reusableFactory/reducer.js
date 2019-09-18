@@ -1,6 +1,5 @@
 import _ from 'lodash';
 
-// TODO: investigate why we need default state here, and then remove it
 export default (stateId, reducer) => (state = reducer(), action) => {
   let { actionStateId, reducerActionType } = {};
 
