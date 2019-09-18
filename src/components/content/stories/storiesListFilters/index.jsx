@@ -15,7 +15,7 @@ export default class StoriesListFilters extends React.PureComponent {
     if (this.state.init) {
       this.setState({ init: false });
       const { filters, getStoriesList, characterId, comicId } = this.props;
-
+      filters.sortBy=null;
       if (characterId) {
         filters.characters = [{ id: characterId }];
       } else {
