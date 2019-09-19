@@ -44,16 +44,8 @@ import {
       console.log("Number of items currently in local storage " + localStorage.length);
       localStorage.clear();
       console.log("Number of items in local storage after cache reset " + localStorage.length);
-      state = undefined;
+      state = undefined;   
   
-      // clear ALL of the workbox cache
-      caches.keys().then(keys => Promise.all(
-        keys.map(key => {
-          return caches.delete(key);
-        })
-      )).then(() => {
-        console.log('Cache cleared!');
-      })
     }
 
 

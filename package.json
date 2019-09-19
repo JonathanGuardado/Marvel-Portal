@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
+    "express-history-api-fallback": "^2.2.1",
     "isomorphic-fetch": "^2.2.1",
     "node-sass": "^4.12.0",
     "query-string": "^6.8.3",
@@ -28,7 +30,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node build/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -77,7 +77,7 @@ class CustomDropdown extends PureComponent {
                         getOptionLabel={option => option.title ? option.title : option.name}
                         getOptionValue={option => option.id}
                         onChange={setValuesFilters}
-                        value={(filteredValues != undefined && filteredValues.length) > 0 ? filteredValues : null}
+                        value={(filteredValues && filteredValues.length) > 0 ? filteredValues : null}
                     />
                 }
             </div>
