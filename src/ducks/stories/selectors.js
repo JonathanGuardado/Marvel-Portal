@@ -2,6 +2,7 @@ import _ from "lodash";
 
 export default {
     hasStories: state => state.data !== undefined,
+    errors: state => state.error,
     getStoriesList: (state )=> {
       if(state.data){
     

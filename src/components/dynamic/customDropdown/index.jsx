@@ -5,18 +5,14 @@ import makeAnimated from 'react-select/animated';
 import PropTypes from 'prop-types';
 
 
-// TODO: use sync select and map options and loadOptions to redux
-
 class CustomDropdown extends PureComponent {
 
     constructor(props) {
         super(props);
         this.state = {
             typing: false,
-            typingTimeout: 0,
-            s: null
+            typingTimeout: 0
         }
-
         this.loadData = this.loadData.bind(this);
     }
 
@@ -34,27 +30,14 @@ class CustomDropdown extends PureComponent {
                     didSucceed ? resolve(
                         getList({ name: data.data }).then(r => r.data.results)
                     ) : reject("Error");
-                }, 1000)
+                }, 500)
             });
         })
-    }
-    handleSelected = o => {
-        this.setState({
-            s: o
-        });
-        this.props.setValuesFilters(o)
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const { list, isLoading, filteredValues } = nextProps;
-        if (list && !isLoading && !filteredValues) { 
-            this.setState({ s: filteredValues }) 
-        }
     }
 
     render() {
         const { filteredValues, setValuesFilters, isMulti, list } = this.props;
-
+        
         return (
             <div>{this.props.title}
                 {list ?
@@ -65,8 +48,8 @@ class CustomDropdown extends PureComponent {
                         options={list}
                         getOptionLabel={option => option.title ? option.title : option.name}
                         getOptionValue={option => option.id}
-                        onChange={this.handleSelected}                        
-                        value={this.state.s}
+                        onChange={setValuesFilters}
+                        value={filteredValues}
                     /> :
                     <AsyncSelect
                         isMulti

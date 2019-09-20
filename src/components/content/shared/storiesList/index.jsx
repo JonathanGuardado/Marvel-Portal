@@ -1,15 +1,19 @@
 import React from 'react';
 import { FixedSizeList as List } from "react-window";
 import Row from "../storyRow"
+import { UncontrolledAlert  } from 'reactstrap';
 
 export default class CharacterList extends React.PureComponent {
 
   render() {
-    const { stories, size, favorites, favFlag, setFavFlag } = this.props;
+    const {error, stories, size, favorites, favFlag, setFavFlag } = this.props;
     const list = favFlag ? favorites : stories.results;
     const total=favFlag ? list.length : stories.total;
 
     return (<div>
+      {Object.keys(error).length>0 ? <UncontrolledAlert  color="danger">
+        There was a problem loading stories. please try again
+    </UncontrolledAlert> : ""}
       {list ?
         <div> 
          <div key={1} style={{ height: '2rem' }}>

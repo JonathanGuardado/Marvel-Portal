@@ -1,7 +1,7 @@
 import _ from "lodash";
 
 export default {
-    hasComics: state => state.data !== undefined,
+    errors: state => state.error,    
     getComicList: (state )=> {
       if(state.data){
     

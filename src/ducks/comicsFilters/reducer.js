@@ -55,7 +55,7 @@ export default (state = INIT_STATE, action = {}) => {
         characters: [],
         stories: [],
         issue:undefined,
-        format:undefined
+        format:null
       };
     }
     default: {

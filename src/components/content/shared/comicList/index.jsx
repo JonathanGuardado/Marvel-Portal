@@ -5,6 +5,7 @@ import SorteableColumn from "../../../dynamic/sorteableColumn";
 import SearchComicsInput from '../../../dynamic/searchInput/comicsByIssueNumber';
 import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import { FaSearch } from "react-icons/fa";
+import { UncontrolledAlert  } from 'reactstrap';
 
 export default class ComicsList extends React.PureComponent {
   constructor(props) {
@@ -19,13 +20,17 @@ export default class ComicsList extends React.PureComponent {
 
 
   render() {
-    const { comics, sortBy, size, favorites, favFlag, setFavFlag } = this.props;
+    const { error,comics, sortBy, size, favorites, favFlag, setFavFlag } = this.props;
     const list = favFlag ? favorites : comics.results;
-    const total=favFlag ? list.length : comics.total;
+    const total = favFlag ? list.length : comics.total;
 
-    return (<div>
+    return (<div>      
+      {Object.keys(error).length>0 ? <UncontrolledAlert  color="danger">
+        There was a problem loading comics. please try again
+    </UncontrolledAlert> : ""}
+
       {list ?
-        <div> 
+        <div>
           <div key={1} style={{ height: '2rem' }}>
             <div className='column-h-fav' style={{ fontWeight: favFlag ? 600 : 300 }} onClick={() => setFavFlag(!favFlag)} >
               Show Favorites
@@ -54,24 +59,24 @@ export default class ComicsList extends React.PureComponent {
             </PopoverBody>
           </Popover>
           {list.length > 0 ?
-          <List
-            className="List"
-            height={500 * (size || 1)}
-            itemCount={total}
-            itemSize={155}
-            itemData={list}
-            width={"100%"}
-            key={2}
-          //ref={ref}
-          >
-            {Row}
-          </List> : <center><div style={{ height: '600px', paddingTop: '200px' }}><h1> Comics Not Found</h1></div></center>}
+            <List
+              className="List"
+              height={500 * (size || 1)}
+              itemCount={total}
+              itemSize={155}
+              itemData={list}
+              width={"100%"}
+              key={2}
+            //ref={ref}
+            >
+              {Row}
+            </List> : <center><div style={{ height: '600px', paddingTop: '200px' }}><h1> Comics Not Found</h1></div></center>}
         </div>
         : ""}
-        <div className="counter"> 
+      <div className="counter">
         {`Showing ${list ? list.length : 0} of ${total} Comics`}
       </div>
-       
+
 
     </div>
     );

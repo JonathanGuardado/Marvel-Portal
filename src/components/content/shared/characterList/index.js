@@ -4,6 +4,7 @@ import view from "./index.jsx";
 
 const mapStateToProps = (state, ownProps) => ({
 	favFlag: selectors.favorites.getFavFlag(state),	
+	error: selectors.characters.errors(state),	 
 	characters: selectors.characters.getCharacterList(state),	
 	favorites: selectors.favorites.getFavoriteCharacters(state),	
 });

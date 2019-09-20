@@ -1,16 +1,20 @@
 import React from 'react';
 import { FixedSizeList as List } from "react-window";
-import Row from "../characterRow"
-import SorteableColumn from "../../../dynamic/sorteableColumn/"
+import Row from "../characterRow";
+import SorteableColumn from "../../../dynamic/sorteableColumn/";
+import { UncontrolledAlert  } from 'reactstrap';
 
 export default class CharacterList extends React.PureComponent {
     
   render() {
-    const { characters,sortBy,size,favorites,favFlag,setFavFlag } = this.props;    
+    const { error,characters,sortBy,size,favorites,favFlag,setFavFlag } = this.props;    
     const list= favFlag ? favorites : characters.results;        
     const total=favFlag ? list.length : characters.total;
 
-    return (  <div>    
+    return (  <div>
+      {Object.keys(error).length>0 ? <UncontrolledAlert  color="danger">
+        There was a problem loading characters. please try again
+    </UncontrolledAlert> : ""}    
      {list ? 
      <div>
       <div key={1} style={{height:'2rem'}}>
