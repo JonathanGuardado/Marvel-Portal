@@ -2,7 +2,7 @@ const baseApiUrl = 'https://gateway.marvel.com';
 
 module.exports = {
   cors: {
-    origin: '*', // so that local.telus.com:4000 is allowed, for example,
+    origin: '*', // allowing requests from any origin 
     allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Correlation-Id, T-Session-Token',
     credentials: true
   },
